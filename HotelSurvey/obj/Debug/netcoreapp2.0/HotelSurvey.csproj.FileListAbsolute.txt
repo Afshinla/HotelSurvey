@@ -1,0 +1,11 @@
+C:\Users\Afshin\source\repos\HotelSurvey\HotelSurvey\bin\Debug\netcoreapp2.0\HotelSurvey.deps.json
+C:\Users\Afshin\source\repos\HotelSurvey\HotelSurvey\bin\Debug\netcoreapp2.0\HotelSurvey.runtimeconfig.json
+C:\Users\Afshin\source\repos\HotelSurvey\HotelSurvey\bin\Debug\netcoreapp2.0\HotelSurvey.runtimeconfig.dev.json
+C:\Users\Afshin\source\repos\HotelSurvey\HotelSurvey\bin\Debug\netcoreapp2.0\HotelSurvey.dll
+C:\Users\Afshin\source\repos\HotelSurvey\HotelSurvey\obj\Debug\netcoreapp2.0\HotelSurvey.csprojResolveAssemblyReference.cache
+C:\Users\Afshin\source\repos\HotelSurvey\HotelSurvey\obj\Debug\netcoreapp2.0\HotelSurvey.csproj.CoreCompileInputs.cache
+C:\Users\Afshin\source\repos\HotelSurvey\HotelSurvey\obj\Debug\netcoreapp2.0\HotelSurvey.AssemblyInfoInputs.cache
+C:\Users\Afshin\source\repos\HotelSurvey\HotelSurvey\obj\Debug\netcoreapp2.0\HotelSurvey.AssemblyInfo.cs
+C:\Users\Afshin\source\repos\HotelSurvey\HotelSurvey\bin\Debug\netcoreapp2.0\HotelSurvey.pdb
+C:\Users\Afshin\source\repos\HotelSurvey\HotelSurvey\obj\Debug\netcoreapp2.0\HotelSurvey.dll
+C:\Users\Afshin\source\repos\HotelSurvey\HotelSurvey\obj\Debug\netcoreapp2.0\HotelSurvey.pdb
