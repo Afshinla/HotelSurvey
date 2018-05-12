@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using HotelSurvey.Models;
 namespace HotelSurvey.Models
 {
-    public class QuestionViewModel
+    public class CreateQuestionViewModel
     {
         public Question Question { get; set; }
-
-        public int SurveyCount { get; set; }
-
-        public IEnumerable<Question> Questions { get; set; }
+        public string Referer { get; set; }
     }
 }

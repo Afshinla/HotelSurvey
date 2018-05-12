@@ -14,7 +14,7 @@ namespace HotelSurvey.Data.Repository
 
         }
 
-        public IEnumerable<Question> GetAllWithSurvey()
+        public IEnumerable<Question> GetAllWithSurveys()
         {
             return _context.Questions.Include(q => q.Surveys);
         }

@@ -8,7 +8,7 @@ namespace HotelSurvey.Data.Repository
 {
     public interface IQuestionRepository : IRepository<Question>
     {
-        IEnumerable<Question> GetAllWithSurvey();
+        IEnumerable<Question> GetAllWithSurveys();
         Question GetWihtSurveys(int id);
     }
 }

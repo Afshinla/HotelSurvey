@@ -52,6 +52,8 @@ namespace HotelSurvey
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            DbInitializer.Seed(app);
         }
     }
 }

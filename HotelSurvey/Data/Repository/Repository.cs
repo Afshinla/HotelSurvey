@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using HotelSurvey.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace HotelSurvey.Data.Repository
     public class Repository<T> : IRepository<T> where T : class
     {
         protected readonly SurveyDbContext _context;
+
         public Repository(SurveyDbContext context)
         {
             _context = context;
@@ -29,7 +31,7 @@ namespace HotelSurvey.Data.Repository
 
         public void Delete(T entity)
         {
-            _context.Add(entity);
+            _context.Remove(entity);
             Save();
         }
 

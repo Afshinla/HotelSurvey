@@ -1,0 +1,33 @@
+﻿@model SurveyViewModel
+
+<div class="row orderForm">
+    <form asp-controller="Survey" asp-action="Create" method="post" class="form-horizontal" role="form">
+        <h3 class="col-md-offset-2">Create new survey</h3>
+
+        <div class="form-group">
+            <label asp-for="Survey.Question" class="col-md-2 control-label"></label>
+            <div class="col-md-4">
+                @Html.DropDownListFor(m => m.Survey.QuestionId,
+                                             new SelectList(Model.Questions.Select(x => new { Value = x.QuestionId, Text = x.Name }), "Value", "Text"), "Select a question",
+                                             htmlAttributes: new { @class = "form-control border-input" })
+                <span asp-validation-for="Survey.Question" class="text-danger"></span>
+            </div>
+            <div class="col-md-2">
+                <a class="btn btn-success" style="width:100%" asp-controller="Question" asp-action="Create">Create an question</a>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Survey.Name" class="col-md-2 control-label"></label>
+            <div class="col-md-6">
+                <input asp-for="Survey.Name" class="form-control" placeholder="Enter survey name" />
+                <span asp-validation-for="Survey.Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="btn-group col-md-offset-2 col-md-6">
+                <input class="btn btn-default" type="submit" value="Return" asp-controller="Survey" asp-action="List" />
+                <input class="btn btn-success" type="submit" value="Create" />
+            </div>
+        </div>
+    </form>
+</div>

@@ -11,37 +11,77 @@ namespace HotelSurvey.Controllers
     public class QuestionController : Controller
     {
         private readonly IQuestionRepository _questionRepository;
-        private readonly ISurveyRepository _surveyRepository;
 
-        public QuestionController(IQuestionRepository questionRepository, ISurveyRepository surveyRepository)
+        public QuestionController(IQuestionRepository questionRepository)
         {
             _questionRepository = questionRepository;
-            _surveyRepository = surveyRepository;
         }
 
+        [Route("Question")]
         public IActionResult List()
         {
-            var questionVM = new List<QuestionViewModel>();
-            var questions = _questionRepository.GetAll();
+            var questions = _questionRepository.GetAllWithSurveys();
 
-            if (questions.Count() == 0)
-            {
-                return View("Empty");
-            }
+            if (questions.Count() == 0) return View("Empty");
 
-            foreach(var question in questions)
-            {
-                questionVM.Add(new QuestionViewModel
-                {
-                    Question = question,
-                    SurveyCount=_surveyRepository.Count()
-                });
-            }
+            return View(questions);
         }
 
-        public IActionResult Index()
+        public IActionResult Update(int id)
         {
-            return View();
+            var question = _questionRepository.GetById(id);
+
+            if (question == null) return NotFound();
+
+            return View(question);
         }
+
+        [HttpPost]
+        public IActionResult Update(Question question)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(question);
+            }
+            _questionRepository.Update(question);
+
+            return RedirectToAction("List");
+        }
+
+        public IActionResult Create()
+        {
+            var viewModel = new CreateQuestionViewModel
+            { Referer = Request.Headers["Referer"].ToString() };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Create(CreateQuestionViewModel questionVM)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(questionVM);
+            }
+            _questionRepository.Create(questionVM.Question);
+
+            if (!String.IsNullOrEmpty(questionVM.Referer))
+            {
+                return Redirect(questionVM.Referer);
+            }
+
+            return RedirectToAction("List");
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var question = _questionRepository.GetById(id);
+
+            _questionRepository.Delete(question);
+
+            return RedirectToAction("List");
+        }
+
+
     }
 }

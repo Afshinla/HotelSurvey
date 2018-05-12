@@ -14,6 +14,6 @@ namespace HotelSurvey.Models
         public int QuestionId { get; set; }
 
         public virtual Customer SurveyTaker { get; set; }
-        public int ServeyTakerId { get; set; }
+        public int SurveyTakerId { get; set; }
     }
 }

@@ -5,11 +5,9 @@ using System.Threading.Tasks;
 
 namespace HotelSurvey.Models
 {
-    public class QuestionViewModel
+    public class SurveyViewModel
     {
-        public Question Question { get; set; }
-
-        public int SurveyCount { get; set; }
+        public Survey Survey { get; set; }
 
         public IEnumerable<Question> Questions { get; set; }
     }
