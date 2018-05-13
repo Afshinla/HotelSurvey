@@ -28,6 +28,7 @@ namespace HotelSurvey
             services.AddTransient<IQuestionRepository, QuestionRepository>();
             services.AddTransient<ISurveyRepository, SurveyRepository>();
             services.AddTransient<ICustomerRepository, CustomerRepository>();
+            services.AddTransient<IResultRepository, ResultRepository>();
             services.AddMvc();
         }
 

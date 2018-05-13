@@ -18,42 +18,46 @@ namespace HotelSurvey.Data
 
 
                 // Add Customers
-                var justin = new Customer { Name = "Jens Madsen" };
+                var jens = new Customer { Name = "Jens Madsen" };
 
-                var willie = new Customer { Name = "Afshin Lakzadeh" };
+                var afshin = new Customer { Name = "Afshin Lakzadeh" };
 
-                var leoma = new Customer { Name = "Hanne Larsen" };
+                var hanne = new Customer { Name = "Hanne Larsen" };
 
-                context.Customers.Add(justin);
-                context.Customers.Add(willie);
-                context.Customers.Add(leoma);
+                context.Customers.Add(jens);
+                context.Customers.Add(afshin);
+                context.Customers.Add(hanne);
+
+                // Add Results
+                var utilfreds = new Result { ResultNummer = 1, ResultText="Utilfreds" };
+
+                var acceptable = new Result { ResultNummer = 2, ResultText="Acceptable" };
+
+                var vedikke = new Result { ResultNummer = 3, ResultText = "Ved ikke" };
+
+                var tilfreds = new Result { ResultNummer = 4, ResultText = "Tilfreds" };
+
+                var megettilfreds = new Result { ResultNummer = 5, ResultText = "Meget tilfreds" };
+
+                context.Results.Add(utilfreds);
+                context.Results.Add(acceptable);
+                context.Results.Add(vedikke);
+                context.Results.Add(tilfreds);
+                context.Results.Add(megettilfreds);
+
 
                 // Add Questions
-                var authorDeMarco = new Question
+                var checkIn = new Question
                 {
-                    Name = "Hvordan var værelset?", Surveys
-                    = new List<Survey>()
-                {
-                    new Survey { Name = "Værelsets komfort" },
-                    new Survey { Name = "Værelsets renlighed" },
-                    new Survey { Name = "Udvalg i minibaren" }
-                }
-                };
-
-                var authorCardone = new Question
-                {
-                    Name = "Grant Cardone",
+                    Name = "Var personelet i receptionen venlige?",
                     Surveys = new List<Survey>()
                 {
-                    new Survey { Name = "The 10X Rule"},
-                    new Survey { Name = "If You're Not First, You're Last"},
-                    new Survey { Name = "Sell To Survive"}
+                    new Survey { Name = "Check-in processen" }
                 }
                 };
 
-                context.Questions.Add(authorDeMarco);
-                context.Questions.Add(authorCardone);
-
+                context.Questions.Add(checkIn);
+                
                 context.SaveChanges();
             }
         }

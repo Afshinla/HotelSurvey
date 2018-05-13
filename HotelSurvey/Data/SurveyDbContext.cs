@@ -17,5 +17,6 @@ namespace HotelSurvey.Data
         public DbSet<Survey> Surveys { get; set; }
         public DbSet<Question> Questions { get; set; } 
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Result> Results { get; set; }
     }
 }

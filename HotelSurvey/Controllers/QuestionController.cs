@@ -81,7 +81,5 @@ namespace HotelSurvey.Controllers
 
             return RedirectToAction("List");
         }
-
-
     }
 }

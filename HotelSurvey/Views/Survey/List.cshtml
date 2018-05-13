@@ -6,6 +6,7 @@
             <th>ID</th>
             <th>Name</th>
             <th>Question name</th>
+            @*<th>Result</th>*@
             <th>Edit question</th>
             <th>Delete question</th>
         </tr>
@@ -13,13 +14,14 @@
     <tbody>
         @foreach (Survey survey in Model)
         {
-            <tr>
-                <td>@survey.SurveyId</td>
-                <td>@survey.Name</td>
-                <td>@survey.Question.Name</td>
-                <td><a class="btn btn-info" asp-area="" asp-controller="Survey" asp-action="Update" asp-route-id="@survey.SurveyId">Edit</a></td>
-                <td><a class="btn btn-danger" asp-area="" asp-controller="Survey" asp-action="Delete" asp-route-id="@survey.SurveyId" asp-route-authorId="@ViewBag.QuestionId">Delete</a></td>
-            </tr>
+        <tr>
+            <td>@survey.SurveyId</td>
+            <td>@survey.Name</td>
+            <td>@survey.Question.Name</td>
+            @*<td>@survey.Result.ResultText</td>*@
+            <td><a class="btn btn-info" asp-area="" asp-controller="Survey" asp-action="Update" asp-route-id="@survey.SurveyId">Edit</a></td>
+            <td><a class="btn btn-danger" asp-area="" asp-controller="Survey" asp-action="Delete" asp-route-id="@survey.SurveyId" asp-route-authorId="@ViewBag.QuestionId">Delete</a></td>
+        </tr>
         }
     </tbody>
 </table>

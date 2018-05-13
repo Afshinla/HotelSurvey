@@ -15,5 +15,8 @@ namespace HotelSurvey.Models
 
         public virtual Customer SurveyTaker { get; set; }
         public int SurveyTakerId { get; set; }
+
+        public virtual Result Result { get; set; }
+        public int ResultId { get; set; }
     }
 }
