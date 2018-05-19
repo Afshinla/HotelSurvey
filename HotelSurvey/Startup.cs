@@ -25,10 +25,12 @@ namespace HotelSurvey
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<SurveyDbContext>(options => options.UseInMemoryDatabase("SurveyContext"));
+
             services.AddTransient<IQuestionRepository, QuestionRepository>();
             services.AddTransient<ISurveyRepository, SurveyRepository>();
             services.AddTransient<ICustomerRepository, CustomerRepository>();
             services.AddTransient<IResultRepository, ResultRepository>();
+
             services.AddMvc();
         }
 

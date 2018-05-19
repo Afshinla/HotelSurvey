@@ -10,5 +10,6 @@ namespace HotelSurvey.Models
         public Survey Survey { get; set; }
 
         public IEnumerable<Question> Questions { get; set; }
+        
     }
 }

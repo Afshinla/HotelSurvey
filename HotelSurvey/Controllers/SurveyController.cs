@@ -21,11 +21,12 @@ namespace HotelSurvey.Controllers
 
         //public IActionResult Index()
         //{
+        //    var model = _q
         //    return View();
         //}
 
         [Route("Survey")]
-        public IActionResult List(int? questionId, int? surveyTakerId)
+        public IActionResult List(int? questionId, int? surveyTakerId, int? resultId)
         {
             if(questionId == null && surveyTakerId == null)
             {

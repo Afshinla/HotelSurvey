@@ -29,14 +29,23 @@ namespace HotelSurvey.Data
                 context.Customers.Add(hanne);
 
                 // Add Results
-                var utilfreds = new Result { ResultNummer = 1, ResultText="Utilfreds" };
 
-                var acceptable = new Result { ResultNummer = 2, ResultText="Acceptable" };
+                //var utilfreds = new Result
+                //{
+                //    ResultText = "Utilfreds",
+                //    ResultNummer = 1,
 
+                //    Questions = new List<Question>()
+                //    {
+                //        new Question { Name = "Var personelet i receptionen venlige?" }
+                //    }
+
+                //};
+
+                var utilfreds = new Result { ResultNummer = 1, ResultText = "Utilfreds" };
+                var acceptable = new Result { ResultNummer = 2, ResultText = "Acceptable" };
                 var vedikke = new Result { ResultNummer = 3, ResultText = "Ved ikke" };
-
                 var tilfreds = new Result { ResultNummer = 4, ResultText = "Tilfreds" };
-
                 var megettilfreds = new Result { ResultNummer = 5, ResultText = "Meget tilfreds" };
 
                 context.Results.Add(utilfreds);
@@ -50,6 +59,7 @@ namespace HotelSurvey.Data
                 var checkIn = new Question
                 {
                     Name = "Var personelet i receptionen venlige?",
+                    
                     Surveys = new List<Survey>()
                 {
                     new Survey { Name = "Check-in processen" }
