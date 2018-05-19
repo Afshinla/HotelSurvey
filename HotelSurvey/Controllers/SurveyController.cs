@@ -12,18 +12,24 @@ namespace HotelSurvey.Controllers
     {
         private readonly ISurveyRepository _surveyRepository;
         private readonly IQuestionRepository _questionRepository;
+        private readonly IResultRepository _resultRepository;
 
-        public SurveyController(ISurveyRepository surveyRepository, IQuestionRepository questionRepository)
+        public SurveyController(ISurveyRepository surveyRepository, IQuestionRepository questionRepository, IResultRepository resultRepository)
         {
             _surveyRepository = surveyRepository;
             _questionRepository = questionRepository;
+            _resultRepository = resultRepository;
         }
 
-        //public IActionResult Index()
-        //{
-        //    var model = _q
-        //    return View();
-        //}
+        public IActionResult Index()
+        {
+            var model = new SurveyNewViewModel
+            {
+                Id = 1,
+                SurveyName = "Reception"
+            };
+            return View(model);
+        }
 
         [Route("Survey")]
         public IActionResult List(int? questionId, int? surveyTakerId, int? resultId)
@@ -33,8 +39,7 @@ namespace HotelSurvey.Controllers
                 //show all Surveys
                 var surveys = _surveyRepository.GetAllWithQuestion();
                 //check surveys
-
-
+                
                 return CheckSurveys(surveys);
             }
             else if (questionId != null)

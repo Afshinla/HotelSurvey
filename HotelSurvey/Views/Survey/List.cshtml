@@ -18,7 +18,7 @@
                 <td>@survey.SurveyId</td>
                 <td>@survey.Name</td>
                 <td>@survey.Question.Name</td>
-                <td>@survey.SurveyTaker</td>
+                <td>@await Component.InvokeAsync("Result")</td>
                 <td><a class="btn btn-info" asp-area="" asp-controller="Survey" asp-action="Update" asp-route-id="@survey.SurveyId">Edit</a></td>
                 <td><a class="btn btn-danger" asp-area="" asp-controller="Survey" asp-action="Delete" asp-route-id="@survey.SurveyId" asp-route-questionid="@ViewBag.QuestionId">Delete</a></td>
             </tr>
