@@ -43,7 +43,7 @@ namespace HotelSurvey.Data
                 //};
 
                 var utilfreds = new Result { ResultNummer = 1, ResultText = "Utilfreds" };
-                var acceptable = new Result { ResultNummer = 2, ResultText = "Acceptable" };
+                var acceptable = new Result { ResultNummer = 2, ResultText = "Acceptabel" };
                 var vedikke = new Result { ResultNummer = 3, ResultText = "Ved ikke" };
                 var tilfreds = new Result { ResultNummer = 4, ResultText = "Tilfreds" };
                 var megettilfreds = new Result { ResultNummer = 5, ResultText = "Meget tilfreds" };
@@ -65,9 +65,29 @@ namespace HotelSurvey.Data
                     new Survey { Name = "Check-in processen" }
                 }
                 };
+                var fast = new Question
+                {
+                    Name = "Hvor tilfreds er du med personalets hurtighed?",
+
+                    Surveys = new List<Survey>()
+                {
+                    new Survey { Name = "Check-in processen" }
+                }
+                };
+                var clean = new Question
+                {
+                    Name = "Hvor tilfreds er du med renligheden i værelset",
+
+                    Surveys = new List<Survey>()
+                {
+                    new Survey { Name = "Rengøring" }
+                }
+                };
 
                 context.Questions.Add(checkIn);
-                
+                context.Questions.Add(fast);
+                context.Questions.Add(clean);
+
                 context.SaveChanges();
             }
         }

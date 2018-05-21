@@ -26,5 +26,19 @@ namespace HotelSurvey.Data.Repository
                 .Include(r => r.Questions)
                 .FirstOrDefault();
         }
+
+        private static List<Result> responses = new List<Result>();
+        public static IEnumerable<Result> Responses
+        {
+            get
+            {
+                return responses;
+            }
+        }
+
+        public static void AddResponse(Result response)
+        {
+            responses.Add(response);
+        }
     }
 }

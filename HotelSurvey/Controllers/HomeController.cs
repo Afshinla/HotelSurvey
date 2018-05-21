@@ -12,6 +12,8 @@ namespace HotelSurvey.Controllers
     {
         public IActionResult Index()
         {
+            int hour = DateTime.Now.Hour;
+            ViewBag.Greeting = hour < 12 ? "Godmorgen" : "Godaften";
             return View();
         }
 

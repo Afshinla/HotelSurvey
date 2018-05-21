@@ -21,16 +21,6 @@ namespace HotelSurvey.Controllers
             _resultRepository = resultRepository;
         }
 
-        public IActionResult Index()
-        {
-            var model = new SurveyNewViewModel
-            {
-                Id = 1,
-                SurveyName = "Reception"
-            };
-            return View(model);
-        }
-
         [Route("Survey")]
         public IActionResult List(int? questionId, int? surveyTakerId, int? resultId)
         {
@@ -128,5 +118,6 @@ namespace HotelSurvey.Controllers
 
             return RedirectToAction("List");
         }
+
     }
 }
