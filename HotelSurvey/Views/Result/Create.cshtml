@@ -2,18 +2,18 @@
 @model Result
 <div class="row orderForm">
     <form asp-controller="Result" asp-action="Create" method="post" class="form-horizontal" role="form">
-        <h3 class="col-md-offset-2">Create new customer</h3>
+        <h3 class="col-md-offset-2">Create new answer</h3>
         <div class="form-group">
             <label asp-for="ResultText" class="col-md-2 control-label"></label>
             <div class="col-md-6">
-                <input asp-for="ResultText" class="form-control" placeholder="Enter customers name" />
+                <input asp-for="ResultText" class="form-control" placeholder="Enter answers name" />
                 <span asp-validation-for="ResultText" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
             <label asp-for="ResultNummer" class="col-md-2 control-label"></label>
             <div class="col-md-6">
-                <input asp-for="ResultNummer" class="form-control" placeholder="Enter customers name" />
+                <input asp-for="ResultNummer" class="form-control" placeholder="Enter answers number" />
                 <span asp-validation-for="ResultNummer" class="text-danger"></span>
             </div>
         </div>

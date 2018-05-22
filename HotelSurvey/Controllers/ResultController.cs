@@ -38,7 +38,7 @@ namespace HotelSurvey.Controllers
             if (ModelState.IsValid)
             {
                 ResultRepository.AddResponse(guestResponse);
-                return View("Thanks", guestResponse);
+                return View("Thanks", "Result");
             }
             else
             {

@@ -11,4 +11,6 @@ namespace HotelSurvey.Data.Repository
         IEnumerable<Result> GetAllWithQuestions();
         Result GetAllWithQuestions(int id);
     }
+
+    
 }

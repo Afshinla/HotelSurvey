@@ -11,9 +11,11 @@ namespace HotelSurvey.Models
         [Key]
         public int ResultId { get; set; }
 
+        [Display(Name = "Answer name")]
         [Required, MaxLength(50)]
         public string ResultText { get; set; }
 
+        [Display(Name = "Answer number")]
         [Required]
         public int ResultNummer { get; set; }
 
